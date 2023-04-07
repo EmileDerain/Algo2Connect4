@@ -179,7 +179,6 @@ function markGame(gameState) {
 
     //console.log('TEST GameState: ', gameState);
 
-
     let nb = giveO_E(gameState);
     //console.log('TEST GameState: ', gameState);
 
