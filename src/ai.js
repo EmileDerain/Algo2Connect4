@@ -4,6 +4,7 @@ function computeMove(gameState) {
     const mark = tryAll(gameState, numberPlayer);
 
     for (let i = 0; i < 7; i++) {
+        //Si il peut gagné
         if (mark[i][0][2]) {
             for (let j = 0; j <= 6; j++) {
                 if (gameState[i][j] === 0) {
@@ -179,6 +180,7 @@ function markGame(gameState) {
 
     //console.log('TEST GameState: ', gameState);
 
+
     let nb = giveO_E(gameState);
     //console.log('TEST GameState: ', gameState);
 
@@ -248,7 +250,7 @@ const pt4 = 100;
 function giveO_E(gameState) {
     let canWin = false;
 
-    let j = {0: 0, 1: 0, 2: 0};
+    let j = {0: 0, 1: 0, "-1": 0};
     for (let i = 0; i < 4; i++) {
         for (let k = 0; k < 6; k++) {
             //console.log('i: ', i, ' k: ', k, ' du tab: ', gameState);
@@ -283,7 +285,7 @@ function giveO_E(gameState) {
 function giveE_O(gameState) {
     let canWin = false;
 
-    let j = {0: 0, 1: 0, 2: 0};
+    let j = {0: 0, 1: 0, "-1": 0};
     for (let i = 3; i < 7; i++) {
         for (let k = 0; k < 6; k++) {
             //console.log('i: ', i, ' k: ', k, ' du tab: ', gameState);
@@ -318,7 +320,7 @@ function giveE_O(gameState) {
 function giveS_N(gameState) {
     let canWin = false;
 
-    let j = {0: 0, 1: 0, 2: 0};
+    let j = {0: 0, 1: 0, "-1": 0};
     for (let i = 0; i < 7; i++) {
         for (let k = 0; k < 3; k++) {
             //console.log('i: ', i, ' k: ', k, ' du tab: ', gameState);
@@ -353,7 +355,7 @@ function giveS_N(gameState) {
 function giveNO_SE(gameState) {
     let canWin = false;
 
-    let j = {0: 0, 1: 0, 2: 0};
+    let j = {0: 0, 1: 0, "-1": 0};
     for (let i = 0; i < 4; i++) {
         for (let k = 3; k < 6; k++) {
             const cp = gameState[i][k];
@@ -388,7 +390,7 @@ function giveNO_SE(gameState) {
 function giveSE_NO(gameState) {
     let canWin = false;
 
-    let j = {0: 0, 1: 0, 2: 0};
+    let j = {0: 0, 1: 0, "-1": 0};
     for (let i = 3; i < 7; i++) {
         for (let k = 0; k < 3; k++) {
             const cp = gameState[i][k];
@@ -423,7 +425,7 @@ function giveSE_NO(gameState) {
 function giveSO_NE(gameState) {
     let canWin = false;
 
-    let j = {0: 0, 1: 0, 2: 0};
+    let j = {0: 0, 1: 0, "-1": 0};
     for (let i = 0; i < 4; i++) {
         for (let k = 0; k < 3; k++) {
             const cp = gameState[i][k];
@@ -458,7 +460,7 @@ function giveSO_NE(gameState) {
 function giveNE_SO(gameState) {
     let canWin = false;
 
-    let j = {0: 0, 1: 0, 2: 0};
+    let j = {0: 0, 1: 0, "-1": 0};
     for (let i = 3; i < 7; i++) {
         for (let k = 3; k < 6; k++) {
             const cp = gameState[i][k];
