@@ -47,8 +47,9 @@ app.get('/move', (req, res) => {
             return res.status(400).send({detail : "les pions ne peuvent pas voler, verifier le format envoyer"});
     }
 
+    let bonneColonne =
     // Retourner la réponse
-    res.send({colonne : " mdr"});
+    res.send({colonne : " "});
 });
 
 /*

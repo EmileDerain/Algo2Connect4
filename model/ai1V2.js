@@ -1,6 +1,6 @@
-const EvalWithoutBasic = require('./EvalWithoutBasic.js')
+const EvalWithoutBasic = require('./EvalWithoutBasic2.js')
 
-class ai1 {
+class ai1V2 {
 
     constructor() {
     }
@@ -14,7 +14,7 @@ class ai1 {
             if (evaluation.res[i].evalBoard.isThereAWinner) {
                 for (let j = 0; j <= 6; j++) {
                     if (board[i][j] === 0) {
-                        // console.log("ai1plays: ", [i, j]);
+                        // console.log("aiV2plays: ", [i, j]);
                         return [i, j];
                     }
                 }
@@ -25,7 +25,7 @@ class ai1 {
 
         for (let j = 0; j <= 6; j++) {
             if (board[bestOne][j] === 0) {
-                // console.log("ai1plays: ", [bestOne, j]);
+                // console.log("aiV2plays: ", [bestOne, j]);
                 return [bestOne, j];
             }
         }
@@ -138,4 +138,4 @@ class ai1 {
 
 }
 
-module.exports = ai1;
+module.exports = ai1V2;

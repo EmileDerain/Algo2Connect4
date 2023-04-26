@@ -1,4 +1,4 @@
-const EvalBoard = require('./EvalPosition')
+const EvalBoard = require('./EvalBoard2')
 
 class EvalWithoutBasic2 {
 
@@ -23,7 +23,7 @@ class EvalWithoutBasic2 {
                 continue;
             }
 
-            const evalBoard = new EvalBoard(aNewBoard[0], {"column": i, "row": aNewBoard[2]});
+            const evalBoard = new EvalBoard(aNewBoard[0]);
             evalBoard.evalCurrentBoard();
             //console.log("If EvalWithoutBasic2 IA play : ", i, " -> ptn[j1][j2] :" + evalBoard.j1Points + ", " + evalBoard.j2Points);
             this.res[i] = {"evalBoard": evalBoard, "canIPlay": aNewBoard[1]};
@@ -37,7 +37,7 @@ class EvalWithoutBasic2 {
         for (let j = 0; j <= 5; j++) {
             if (gameState2[col][j] === 0) {
                 gameState2[col][j] = -1;
-                return [gameState2, true, j];
+                return [gameState2, true];
             }
         }
         return [gameState2, false];

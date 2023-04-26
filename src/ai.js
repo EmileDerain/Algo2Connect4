@@ -1,5 +1,5 @@
 function computeMove(gameState) {
-    console.log('De base: ', gameState);
+    //console.log('De base: ', gameState);
     const numberPlayer = whoPlay(gameState);
     const mark = tryAll(gameState, numberPlayer);
 
@@ -8,7 +8,7 @@ function computeMove(gameState) {
         if (mark[i][0][2]) {
             for (let j = 0; j <= 6; j++) {
                 if (gameState[i][j] === 0) {
-                    console.log("AIplays: ", [i, j]);
+                    // console.log("1. AIplays: ", [i, j]);
                     return [i, j];
                 }
             }
@@ -19,7 +19,7 @@ function computeMove(gameState) {
 
     for (let j = 0; j <= 6; j++) {
         if (gameState[bestOne][j] === 0) {
-            console.log("AIplays: ", [bestOne, j]);
+            // console.log("2. AIplays: ", [bestOne, j]);
             return [bestOne, j];
         }
     }

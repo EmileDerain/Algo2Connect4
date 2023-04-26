@@ -1,4 +1,4 @@
-const EvalWithoutBasic = require('./EvalWithoutBasic.js')
+const EvalWithoutBasic = require('./EvalWithBasic.js')
 
 class ai1 {
 
@@ -9,12 +9,14 @@ class ai1 {
         const evaluation = new EvalWithoutBasic(board)
         evaluation.tryAll();
 
+        // console.log(evaluation.res)
+
         for (let i = 0; i < 7; i++) {
             //Si il peut gagné
             if (evaluation.res[i].evalBoard.isThereAWinner) {
                 for (let j = 0; j <= 6; j++) {
                     if (board[i][j] === 0) {
-                        // console.log("ai1plays: ", [i, j]);
+                        // console.log("ai2plays: ", [i, j]);
                         return [i, j];
                     }
                 }
@@ -25,7 +27,7 @@ class ai1 {
 
         for (let j = 0; j <= 6; j++) {
             if (board[bestOne][j] === 0) {
-                // console.log("ai1plays: ", [bestOne, j]);
+                // console.log("ai2plays: ", [bestOne, j]);
                 return [bestOne, j];
             }
         }
