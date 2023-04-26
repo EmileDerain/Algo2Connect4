@@ -1,14 +1,11 @@
-const http = require('http');
+const IA2 = require('../model/ai1V2.js');
+
 const express = require('express')
 const app = express()
 const port=8000
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
-})
-
-app.get('/emile/',(req,res)=>{
-    res.send("emile ca marche")
 })
 
 app.listen(port, () => {
@@ -76,9 +73,12 @@ app.get('/move', (req, res) => {
         return output;
     }
 
+    const IaPlayer2 = new IA2();
+
+    let rep = IaPlayer2.play(board);
 
     // Retourner la réponse
-    res.send(toString(board));
+    res.send({"colonne": rep[0]});
 });
 
 /*
