@@ -47,9 +47,38 @@ app.get('/move', (req, res) => {
             return res.status(400).send({detail : "les pions ne peuvent pas voler, verifier le format envoyer"});
     }
 
-    let bonneColonne =
+    let board = [[],[],[],[],[],[],[]];
+    let indiceBase = 0;
+    for(let i = 0; i < b.length; i+= 6){ // faire le formatage et renvoyer la matrice
+        const chaineCoupe = b.slice(i,i+6);
+        console.log("toute le chaine"+b)
+        console.log(i);
+        console.log(i+6);
+        console.log(chaineCoupe);
+        for(let j = 0; j<chaineCoupe.length; j++){
+            switch (chaineCoupe[j]){
+                case 'm' : board[indiceBase][j] = -1; break;
+                case 'h' : board[indiceBase][j] = 1; break;
+                case '0' : board[indiceBase][j] = 0; break;
+            }
+        }
+        indiceBase++;
+    }
+
+    function toString(board) {
+        let output = '';
+        for (let i = 0; i < board.length; i++) {
+            for (let j = 0; j < board[i].length; j++) {
+                output += board[i][j] + ' ';
+            }
+            output += '\n'; // ajouter un retour à la ligne après chaque ligne
+        }
+        return output;
+    }
+
+
     // Retourner la réponse
-    res.send({colonne : " "});
+    res.send(toString(board));
 });
 
 /*

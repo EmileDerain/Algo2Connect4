@@ -1,0 +1,1 @@
+docker run --rm -d -p 8000:8000 node_image
